@@ -23,7 +23,7 @@ $(function() {
 
         var newContact = new Contact(inputtedFirstName, inputtedLastName);
 
-        $("#new-address").each(function() {
+        $(".new-address").each(function() {
 
             var inputtedStreet = $(this).find("#new-street").val();
             var inputtedCity = $(this).find("#new-city").val();
@@ -39,6 +39,10 @@ $(function() {
             $("#show-contact h2").text(newContact.firstName);
             $(".first-name").text(newContact.firstName);
             $(".last-name").text(newContact.lastName);
+            $("ul#addresses").text("");
+            newContact.addresses.forEach(function(address) {
+                $("ul#addresses").append("<li>" + address.street + ", " + address.city + ", " + address.state + "</li>");
+            });
         });
     });
 

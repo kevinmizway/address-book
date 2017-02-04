@@ -32,4 +32,23 @@ $(function() {
             $(".last-name").text(newContact.lastName);
         });
     });
+
+    $("#add-address").click(function() {
+
+        $("#new-addresses").append('<div class="new-address">'  +          
+                                        '<div class="form-group">' +
+                                            '<label for="new-street">Street</label>' +
+                                            '<input id="new-street" class="form-control" type="text">' +
+                                        '</div>' +
+                                        '<div class="form-group">' +
+                                            '<label for="new-city">City</label>' +
+                                            '<input id="new-city" class="form-control" type="text">' +
+                                        '</div>' +
+                                        '<div class="form-group">' +
+                                            '<label for="new-state">State</label>' +
+                                            '<input id="new-state" class="form-control" type="text">' +
+                                        '</div>' +
+                                    '</div>')
+
+    });
 });

@@ -18,33 +18,27 @@ Address.prototype.fullAddress = function() {
     return this.street + ", " + this.city + ", " + this.state;
 }
 
-function resetFields() {
-    $("#new-first-name").val("");
-    $("#new-last-name").val("");
-    $(".new-street").val("");
-    $(".new-city").val("");
-    $(".new-state").val("");
+function newAddresses() {
+    $("#new-addresses").append('<div class="new-address">' +
+        '<div class="form-group>' +
+            '<label for="new-street">Street</label>' +
+            '<input class="form-control new-street" type="text">' +
+        '</div>' +
+        '<div class="form-group">' +
+            '<label for="new-city">City</label>' +
+            '<input class="form-control new-city" type="text">' +
+        '</div>' +
+        '<div class="form-group">' +
+            '<label for="new-state">State</label>' +
+            '<input class="form-control new-state" type="text">' +
+        '</div>' +
+    '</div>')
 }
 
 $(function() {
 
     $("#add-address").click(function() {
-
-        $("#new-addresses").append('<div class="new-address">'  +          
-                                        '<div class="form-group">' +
-                                            '<label for="new-street">Street</label>' +
-                                            '<input class="form-control new-street" type="text">' +
-                                        '</div>' +
-                                        '<div class="form-group">' +
-                                            '<label for="new-city">City</label>' +
-                                            '<input class="form-control new-city" type="text">' +
-                                        '</div>' +
-                                        '<div class="form-group">' +
-                                            '<label for="new-state">State</label>' +
-                                            '<input class="form-control new-state" type="text">' +
-                                        '</div>' +
-                                    '</div>')
-
+        newAddresses();
     });
 
     $("#new-contact").submit(function(event) {
@@ -77,6 +71,6 @@ $(function() {
             });
         });
 
-      resetFields();  
+      $(".form-group").children().val("")
     });
 });

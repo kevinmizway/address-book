@@ -61,7 +61,7 @@ $(function() {
         $("#Contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
 
         $(".contact").last().click(function() {
-            $("#show-contact").show();
+            $("#show-contact").show().css({"border-style" : "solid", "border-color" : "#81d8d0", padding: "10px", "background-color" : "#f5f5dc"});
             $("#show-contact h2").text(newContact.fullName());
             $(".first-name").text(newContact.firstName);
             $(".last-name").text(newContact.lastName);

@@ -18,6 +18,14 @@ Address.prototype.fullAddress = function() {
     return this.street + ", " + this.city + ", " + this.state;
 }
 
+function resetFields() {
+    $("#new-first-name").val("");
+    $("#new-last-name").val("");
+    $(".new-street").val("");
+    $(".new-city").val("");
+    $(".new-state").val("");
+}
+
 $(function() {
 
     $("#add-address").click(function() {
@@ -69,10 +77,6 @@ $(function() {
             });
         });
 
-        $("#new-first-name").val("");
-        $("#new-last-name").val("");
-        $(".new-street").val("");
-        $(".new-city").val("");
-        $(".new-state").val("");
+      resetFields();  
     });
 });
